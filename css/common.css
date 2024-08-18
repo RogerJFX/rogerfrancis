@@ -1,0 +1,10 @@
+div.head {
+	margin-bottom: 12px;
+}
+
+div.head > span.item {
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	margin-right: 4px;
+	padding: 4px;
+}
