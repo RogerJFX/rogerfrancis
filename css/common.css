@@ -1,3 +1,7 @@
+*, body {
+	font-family: courier, monospace;
+}
+
 div.head {
 	margin-bottom: 12px;
 }
@@ -5,6 +9,11 @@ div.head {
 div.head > span.item {
 	border-left: 1px solid grey;
 	border-right: 1px solid grey;
-	margin-right: 4px;
+	margin-right: 8px;
 	padding: 4px;
+	cursor: pointer;
+}
+
+div.head > span.pwd {
+	text-decoration: underline;
 }

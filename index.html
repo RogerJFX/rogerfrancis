@@ -1,13 +1,14 @@
 <html>
 <head>
-	<link rel="stylesheet" href="css/common.css">
+	<script src="./js/scriptAppender.js"></script>
+	<script>
+		appendCSS('./css/common.css');
+		appendScript('./js/version.js');
+	</script>
 </head>
 <body>
-<div class="head">
-	<span class="item"><a href="./application/index.html">My application</a></span>
-	<span class="item"><a href="./future/index.html">Future</a></span>
-</div>
-
-<div>Hi there. Yet not at the scene. Meanwhile you might like <a href="https://crazything.de">crazything.de</a></div>
+	<div id="head" class="head"></div>
+	<div>Hi there. Yet not at the scene. Meanwhile you might like <a href="https://crazything.de">crazything.de</a></div>
 </body>
+<script>appendScript('./js/menu.js');</script>
 </html>
