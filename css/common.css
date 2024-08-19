@@ -8,12 +8,12 @@ div.head {
 
 div.head > span.item {
 	border-left: 1px solid grey;
-	border-right: 1px solid grey;
-	margin-right: 8px;
+	border-bottom: 1px solid grey;
+	margin-right: 12px;
 	padding: 4px;
 	cursor: pointer;
 }
 
 div.head > span.pwd {
-	text-decoration: underline;
+	font-weight: bold;
 }

@@ -1,15 +1,18 @@
-<html>
+<html lang="en">
 <head>
+	<title>My Application</title>
 	<script src="../../js/scriptAppender.js"></script>
 	<script>
-		appendCSS('../../css/common.css');
 		appendScript('../../js/version.js');
+		window.onload = _ => {
+			appendCSS('../../css/common.css');
+			appendScript('../../js/menu.js');
+		}
 	</script>
 </head>
 <body>
 	<div id="head" class="head"></div>
 	<p>Anything wrong?</p>
-	<div><img src="./img/roger.jpg"/></div>
+	<div><img src="./img/roger.jpg" alt="Alter"/></div>
 </body>
-<script>appendScript('../../js/menu.js');</script>
 </html>
