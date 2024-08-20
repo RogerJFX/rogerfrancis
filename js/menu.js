@@ -3,10 +3,14 @@
     const MENU = [
         {main: true, label: 'Home', uri: '/'},
         {main: true, label: 'My Application', uri: '/page/application/'},
+        {main: true, label: 'Takes', uri: '/page/takes/'},
+        {main: true, label: 'Thanks', uri: '/page/thanx/'},
         {main: true, label: 'Future', uri: '/page/future/'},
         {main: false, label: 'Equipment', uri: '/page/application/equipment/'},
         {main: false, label: 'Guitars', uri: '/page/application/equipment/guitars/'},
         {main: false, label: 'Amps', uri: '/page/application/equipment/amps/'},
+        {main: false, label: 'Pedals', uri: '/page/application/equipment/pedals/'},
+        {main: false, label: 'Recording', uri: '/page/application/equipment/recording/'},
     ];
 
     function findMatchingMenuItems(onlyMain) {
@@ -38,8 +42,8 @@
             el.setAttribute('onclick', `goto('${i.uri}')`);
             el.innerHTML = i.label;
             breadcrumbsNode.appendChild(el);
-        })
-        console.log(matchingItems);
+        });
+        document.title = matchingItems.reverse()[0].label;
     })();
 
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));

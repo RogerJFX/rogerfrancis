@@ -1,6 +1,7 @@
 *, body {
 	font-family: courier, monospace;
 	font-size: 15px;
+	line-height: 25px;
 }
 
 div.head {
