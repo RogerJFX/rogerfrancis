@@ -33,17 +33,19 @@
         });
     })();
 
-    (function createBreadcrumbs() {
+    (function createBreadcrumbs(color, colorInc) {
         if(!breadcrumbsNode) return;
         const matchingItems = findMatchingMenuItems().reverse();
         matchingItems.forEach(i => {
+            const col = (color += colorInc) > 255 ? 255 : color;
             const el = document.createElement('SPAN');
             el.classList.add('item');
             el.setAttribute('onclick', `goto('${i.uri}')`);
+            el.setAttribute('style', `color: rgb(${col},${col},${col})`)
             el.innerHTML = i.label;
             breadcrumbsNode.appendChild(el);
         });
         document.title = matchingItems.reverse()[0].label;
-    })();
+    })(110, 30);
 
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));

@@ -1,0 +1,8 @@
+/* Just to avoid flickering. Not versioned. */
+*, body {
+    font-family: courier, monospace;
+    font-size: 15px;
+    line-height: 25px;
+    background-color: #2B2B2B;
+    color: #BABABA;
+}

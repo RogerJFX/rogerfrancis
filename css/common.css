@@ -2,6 +2,8 @@
 	font-family: courier, monospace;
 	font-size: 15px;
 	line-height: 25px;
+	background-color: #2B2B2B;
+	color: #BABABA;
 }
 
 div.head {
@@ -22,6 +24,11 @@ div.head > span.item {
 	cursor: pointer;
 }
 
+div.head > span.pwd {
+	font-weight: bold;
+	color: #CC7832;
+}
+
 div.breadcrumbs > span.item {
 	margin-right: 12px;
 	padding: 1px;
@@ -34,8 +41,20 @@ div.breadcrumbs > span.item::before {
 	padding-right: 4px;
 }
 
-div.head > span.pwd {
+strong {
+	color: #6897BB;
+}
+
+h4 {
+	color: #E8BF6A;
 	font-weight: bold;
+	font-size: 15px;
+}
+
+a {
+	color: #A4C261;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 ul > li {
