@@ -8,6 +8,7 @@
 		appendScript('/js/version.js');
 		window.onload = _ => {
 			appendCSS('/css/common.css');
+			appendCSS('./application.css');
 			appendScript('/js/menu.js');
 		}
 	</script>
@@ -15,18 +16,31 @@
 <body>
 	<div id="head" class="head"></div>
 	<div id="breadcrumbs" class="breadcrumbs"></div>
-	<p style="color:red;font-weight:bold;"><span style="font-size: 36px;">🚧</span> Under construction.</p>
-	<div class="heading">
+	<div>
+		<div class="portrait"><img src="/assets/img/roger.jpg" alt="Alter" class="portrait"/></div>
+		<div class="about">
+			<strong>Hey, my name is Roger.</strong> As You might see, I am a very young man.
+			Just forgot to shave me this morning.
+			<br /><br />
+			I am a guitar player, singer, whatever. I once have started with the violin, though.
+			<br /><br />
+			My current goal is to introduce some very nice <a onclick="goto('./equipment/guitars')" href="#">guitars</a>. And how they may be played.
+			<br /><br />
+			If You are in luck, I once will play some lovely lullabies for You.
+			<br /><br />
+			Currently there only are some few <a onclick="goto('../takes')" href="#">simple takes</a>
+		</div>
+	</div>
+	<div class="submenu">
 		<ul>
 			<li>
-				<a href="#" onclick="goto('../takes/')">Takes</a>
+				<a class="promoted" href="#" onclick="goto('./equipment/')">Equipment</a>
 			</li>
 			<li>
-				<a href="#" onclick="goto('./equipment/')">Equipment</a>
+				<a class="promoted" href="#" onclick="goto('../takes/')">Takes</a>
 			</li>
 		</ul>
 	</div>
-	<p>Anything wrong?</p>
-	<div><img src="/assets/img/roger.jpg" alt="Alter"/></div>
+
 </body>
 </html>

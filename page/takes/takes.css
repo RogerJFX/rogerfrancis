@@ -26,8 +26,9 @@ div.take-container {
 div.take-container div.take {
     width: 320px;
     height: 200px;
-    border-left: 1px solid rgba(152, 118, 170, 0.55);
-    border-bottom: 1px solid rgba(152, 118, 170, 0.55);
+    border-left: 1px dotted rgba(152, 118, 170, 0.75);
+    border-bottom: 1px dotted rgba(152, 118, 170, 0.95);
+    border-radius: 8px;
     float: left;
     position: relative;
     padding: 8px;

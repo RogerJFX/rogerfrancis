@@ -1,0 +1,21 @@
+div.portrait {
+    padding: 0 8px 0 0;
+    display: inline;
+    float: left;
+}
+
+img.portrait {
+    width: 240px;
+    border-radius: 8px;
+}
+
+div.about {
+    display: inline;
+    vertical-align: top;
+}
+
+div.submenu {
+    clear: both;
+    padding-top: 8px;
+
+}

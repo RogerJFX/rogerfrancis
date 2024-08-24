@@ -22,6 +22,7 @@ div.head > span.item {
 	padding: 4px 4px 4px 8px;
 	font-size: 18px;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 div.head > span.pwd {
@@ -53,12 +54,16 @@ strong {
 h4 {
 	color: #E8BF6A;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 16px;
 }
 
 a {
 	color: #A4C261;
 	text-decoration: none;
+}
+
+a.promoted {
+	font-weight: bold;
 }
 
 a::before {

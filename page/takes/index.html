@@ -13,23 +13,15 @@
 		}
 		document.addEventListener('play', e => {
 			const audios = document.getElementsByTagName('audio');
-			[...audios].forEach(a => {
-				if(a !== e.target) {
-					a.pause();
-				}
-			});
+			[...audios].filter(a => a !== e.target).forEach(a => a.pause());
 		}, true);
 	</script>
 </head>
 <body>
 	<div id="head" class="head"></div>
 	<div id="breadcrumbs" class="breadcrumbs"></div>
-	<p style="color:red;font-weight:bold;"><span style="font-size: 36px;">🚧</span> Under construction.</p>
 	<h4>Demo tracks</h4>
-	<p><strong>No songs here.</strong> Just some single tracks for my application.</p>
-	<!--
-	<p style="font-size: 48px">🤪</p>
-	-->
+	<p><strong>No songs here.</strong> Just some single tracks for my application. <span style="color:red">Songs listed exceptionally for development purpose.</span></p>
 	<div class="take-container">
 		<div class="take">
 			<div class="info">
@@ -60,6 +52,61 @@
 			<div class="audio">
 				<audio controls loop>
 					<source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
+					No audio support? Use another browser then.
+				</audio>
+			</div>
+		</div>
+	</div>
+	<div style="clear: both"></div>
+	<h4>Some very old songs from about 2000</h4>
+	<p>Yes, I once had some attempts.</p>
+	<div class="take-container">
+		<div class="take">
+			<div class="info">
+				<div class="title">Bubble Trouble</div>
+				<div class="date">Date: Year 2000</div>
+				<div class="description">
+					Some blues with a drum machine behind. Was a Top10 song this time in some minor charts.
+					<strong>Should be too loud.</strong>
+				</div>
+			</div>
+			<div class="audio">
+				<audio controls loop>
+					<source src="/assets/mp3/bubble_rough-01.mp3" type="audio/mpeg">
+					No audio support? Use another browser then.
+				</audio>
+			</div>
+		</div>
+
+		<div class="take">
+			<div class="info">
+				<div class="title">Tidy Bear</div>
+				<div class="date">Date: Year 2000</div>
+				<div class="description">
+					Mind the sound of the guitar solo in the last section. It was a computer. Ensonic DP4+.
+					<strong>Should be too loud.</strong>
+				</div>
+			</div>
+			<div class="audio">
+				<audio controls loop>
+					<source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
+					No audio support? Use another browser then.
+				</audio>
+			</div>
+		</div>
+
+		<div class="take">
+			<div class="info">
+				<div class="title">Oh no!</div>
+				<div class="date">Date: Year 2000</div>
+				<div class="description">
+					Keep loving the lyrics. The take itself seems weired.
+					<strong>Should be too loud.</strong>
+				</div>
+			</div>
+			<div class="audio">
+				<audio controls loop>
+					<source src="/assets/mp3/ohno_rough-01.mp3" type="audio/mpeg">
 					No audio support? Use another browser then.
 				</audio>
 			</div>
