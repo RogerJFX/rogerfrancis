@@ -1,5 +1,5 @@
 *, body {
-	font-family: courier, monospace;
+	font-family: monospace;
 	font-size: 15px;
 	line-height: 25px;
 	background-color: #2B2B2B;
@@ -16,8 +16,8 @@ div.breadcrumbs {
 }
 
 div.head > span.item {
-	border-left: 1px solid grey;
-	border-bottom: 1px solid grey;
+	border-left: 1px solid rgba(152, 118, 170, 0.45);
+	border-bottom: 1px solid rgba(152, 118, 170, 0.45);
 	margin-right: 12px;
 	padding: 4px 4px 4px 8px;
 	font-size: 18px;
@@ -25,6 +25,8 @@ div.head > span.item {
 }
 
 div.head > span.pwd {
+	border-left: 1px solid rgba(152, 118, 170, 0.25);
+	border-bottom: 1px solid rgba(152, 118, 170, 0.25);
 	font-weight: bold;
 	color: #CC7832;
 }
@@ -37,8 +39,11 @@ div.breadcrumbs > span.item {
 }
 
 div.breadcrumbs > span.item::before {
-	content: '>>';
-	padding-right: 4px;
+	content: '\000BB';
+	padding-right: 6px;
+	color: #9876AA;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 strong {
@@ -53,10 +58,25 @@ h4 {
 
 a {
 	color: #A4C261;
-	font-weight: bold;
 	text-decoration: none;
+}
+
+a::before {
+	content: '\000BB';
+	padding-right: 4px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+ul {
+	list-style: outside;
 }
 
 ul > li {
 	margin-bottom: 8px;
+}
+
+ul > li::marker {
+	color: #6A8759;
+	font-size: 18px;
 }
