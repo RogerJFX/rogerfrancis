@@ -8,13 +8,62 @@
 		appendScript('/js/version.js');
 		window.onload = _ => {
 			appendCSS('/css/common.css');
+			appendCSS('./takes.css');
 			appendScript('/js/menu.js');
 		}
+		document.addEventListener('play', e => {
+			const audios = document.getElementsByTagName('audio');
+			[...audios].forEach(a => {
+				if(a !== e.target) {
+					a.pause();
+				}
+			});
+		}, true);
 	</script>
 </head>
 <body>
 	<div id="head" class="head"></div>
 	<div id="breadcrumbs" class="breadcrumbs"></div>
+	<p style="color:red;font-weight:bold;"><span style="font-size: 36px;">🚧</span> Under construction.</p>
+	<h4>Demo tracks</h4>
+	<p><strong>No songs here.</strong> Just some single tracks for my application.</p>
+	<!--
 	<p style="font-size: 48px">🤪</p>
+	-->
+	<div class="take-container">
+		<div class="take">
+			<div class="info">
+				<div class="title">Bubble Trouble</div>
+				<div class="date">Date: Year 2000</div>
+				<div class="description">
+					Just an old song used in order to develop the audio section.
+					<strong>Should be too loud.</strong> Will be removed later.
+				</div>
+			</div>
+			<div class="audio">
+				<audio controls loop>
+					<source src="/assets/mp3/bubble_rough-01.mp3" type="audio/mpeg">
+					No audio support? Use another browser then.
+				</audio>
+			</div>
+		</div>
+
+		<div class="take">
+			<div class="info">
+				<div class="title">Tidy Bear</div>
+				<div class="date">Date: Year 2000</div>
+				<div class="description">
+					Another old song.
+					<strong>Should be too loud.</strong> Will be removed later.
+				</div>
+			</div>
+			<div class="audio">
+				<audio controls loop>
+					<source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
+					No audio support? Use another browser then.
+				</audio>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

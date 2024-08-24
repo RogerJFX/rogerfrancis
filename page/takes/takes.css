@@ -1,0 +1,55 @@
+audio {
+    width: 318px;
+
+    height: 30px;
+    display: block;
+    box-shadow: 2px 2px 4px 0 #6897BB;
+    border-radius: 8px;
+}
+
+/* color player at Edge and Chrome */
+audio::-webkit-media-controls-panel {
+    background-color: #6897BB;
+    opacity: 1;
+}
+
+/* color player at Firefox (takes blue only) */
+audio {
+    background-color: #6897BB;
+    opacity: 0.75;
+}
+
+div.take-container {
+    position: relative;
+}
+
+div.take-container div.take {
+    width: 320px;
+    height: 200px;
+    border-left: 1px solid rgba(152, 118, 170, 0.55);
+    border-bottom: 1px solid rgba(152, 118, 170, 0.55);
+    float: left;
+    position: relative;
+    padding: 8px;
+    margin: 0 12px 12px 0;
+}
+
+div.take-container div.take div.info div.description {
+    max-height: 98px;
+    overflow: hidden;
+}
+
+div.take-container div.take div.info div.title {
+    font-weight: bold;
+    color: #CC7832;
+}
+
+div.take-container div.take div.info div.date {
+    color: #6A8759;
+}
+
+div.take-container div.take div.audio {
+    position: absolute;
+    bottom: 12px;
+}
+
