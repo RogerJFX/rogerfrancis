@@ -3,7 +3,7 @@
     const MENU = [
         {main: true, label: 'Home', uri: '/'},
         {main: true, label: 'My Application', uri: '/page/application/'},
-        {main: true, label: 'Takes', uri: '/page/takes/'},
+        {main: true, label: '🎸 Takes', uri: '/page/takes/'},
         {main: true, label: 'Thanks', uri: '/page/thanx/'},
         {main: true, label: 'Future', uri: '/page/future/'},
         {main: false, label: 'Equipment', uri: '/page/application/equipment/'},
