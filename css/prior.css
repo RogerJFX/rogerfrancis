@@ -6,3 +6,7 @@
     background-color: #2B2B2B;
     color: #BABABA;
 }
+body {
+    opacity: 0.001;
+    transition: opacity .3s ease-in-out;
+}
