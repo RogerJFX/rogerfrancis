@@ -6,4 +6,4 @@
         l.href = `${l.protocol}//${l.host}${l.pathname}?v=${_v}`;
     }
     window.goto = url => l.href = `${url}?v=${_v}`;
-})('0.4.8');
+})('0.4.9');
