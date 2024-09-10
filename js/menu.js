@@ -26,8 +26,9 @@
             el.classList.add('item');
             if (i.uri === pwd) {
                 el.classList.add('pwd');
+            } else {
+                el.setAttribute('onclick', `goto('${i.uri}')`);
             }
-            el.setAttribute('onclick', `goto('${i.uri}')`);
             el.innerHTML = i.label;
             menuNode.appendChild(el);
         });

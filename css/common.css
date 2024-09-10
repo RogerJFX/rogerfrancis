@@ -31,6 +31,7 @@ div.head > span.pwd {
 	border-bottom: 1px solid rgba(152, 118, 170, 0.25);
 	font-weight: bold;
 	color: #CC7832;
+	cursor: default;
 }
 
 div.breadcrumbs > span.item {
