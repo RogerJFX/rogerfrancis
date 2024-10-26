@@ -1,6 +1,5 @@
 audio {
     width: 318px;
-
     height: 30px;
     display: block;
     box-shadow: 2px 2px 4px 0 #6897BB;
@@ -45,6 +44,15 @@ div.take-container div.take div.info div.title {
     color: #CC7832;
 }
 
+div.take-container div.take div.info div.title.linked {
+    cursor: pointer;
+}
+
+div.take-container div.take div.info div.title.linked::before {
+    content: '\000BB';
+    padding-right: 6px;
+}
+
 div.take-container div.take div.info div.date {
     color: #6A8759;
 }
@@ -54,3 +62,15 @@ div.take-container div.take div.audio {
     bottom: 12px;
 }
 
+/* MANUAL PLAY SECTION */
+div.manualPlay {
+    margin: 0;
+    height: 0;
+    transition: height .4s ease-in-out;
+}
+div.manualPlay.activated {
+    height: 18px;
+}
+div.manualPlay.deleteMe {
+    height: 0;
+}

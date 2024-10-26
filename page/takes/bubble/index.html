@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-</title>
+    <link rel="stylesheet" href="/css/prior.css">
+    <script src="/js/scriptAppender.js"></script>
+    <script>
+        appendScript('/js/version.js');
+        window.getLastBreadcrumbTitle = _ => 'Bubble Trouble';
+        $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playThisCrap('/assets/mp3/bubble_rough-01.mp3'));
+        window.onload = _ => {
+            appendCSS('/css/common.css');
+            appendCSS('../takes.css');
+            appendScript('/js/menu.js');
+            appendScript('../takes.js');
+        }
+    </script>
+</head>
+<body>
+    <div id="head" class="head"></div>
+    <div id="breadcrumbs" class="breadcrumbs"></div>
+    <div id="manualPlay" class="manualPlay"></div>
+    <h4>Bubble Trouble</h4>
+    <p>
+        <span style="color:red">Just some text for devel purpose.</span>
+    </p>
+    <p>
+        This is an option to tell more about a track, if needed. Track should be played automatically.
+    </p>
+    <p>
+        E.g. I would like to tell my friends, why I consider modelling amps being crap.
+    </p>
+</body>
+</html>
