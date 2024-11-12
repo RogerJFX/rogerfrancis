@@ -53,6 +53,14 @@ div.take-container div.take div.info div.title.linked::before {
     padding-right: 6px;
 }
 
+div.take-container div.take div.info div.title.linked::after {
+    content: '🎶';
+    color: transparent;
+    text-shadow: 0 0 0 #CC7832;
+    text-align: right;
+    float:right;
+}
+
 div.take-container div.take div.info div.date {
     color: #6A8759;
 }
