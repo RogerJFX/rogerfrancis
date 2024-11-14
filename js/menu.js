@@ -78,7 +78,7 @@
         }
         const xhr = new XMLHttpRequest();
         xhr.onload = _ => {
-            if(xhr.readyState !== 4 || xhr.status === 200) {
+            if(xhr.status === 200) {
                 location.href = window.impHref(href + `index-${requestedLang}.html`);
             } else {
                 location.href = window.impHref(href);
