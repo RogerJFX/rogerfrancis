@@ -57,7 +57,7 @@
             breadcrumbsNode.appendChild(el);
             document.title = window.getLastBreadcrumbTitle();
         } else {
-            document.title = matchingItems.reverse()[0].label;
+            document.title = findLabel(matchingItems.reverse()[0]);
         }
     })(110, 30);
 
