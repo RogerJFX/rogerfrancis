@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>-</title>
+	<link rel="stylesheet" href="/css/prior.css">
+	<script src="/js/scriptAppender.js"></script>
+	<script>
+		appendScript('/js/version.js');
+		window.onload = _ => {
+			appendCSS('/css/common.css');
+			appendScript('/js/menu.js');
+		}
+		function switchLang(lang) {
+			if(lang === 'en') {
+				sessionStorage.removeItem('lang');
+			} else {
+				sessionStorage.setItem('lang', lang);
+			}
+			window.goto(location.href.replace(/index(-\w{2})?\.html/, '').replace(/\?.*$/, ''));
+		}
+	</script>
+</head>
+<body>
+	<div id="head" class="head"></div>
+	<div id="breadcrumbs" class="breadcrumbs"></div>
+	<p>
+		Please note, that this site is typically maintained in English, and therefore all other language versions
+		may be out of date.
+	</p>
+	<p>
+		If another language's document is missing completely, a fallback to the English version
+		will be performed.
+	</p>
+	<div>
+		<ul>
+			<li>
+				<a href="#" onclick="switchLang('en')">English 🇬🇧</a>
+			</li>
+			<li>
+				<a href="#" onclick="switchLang('de')">Deutsch 🇩🇪</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

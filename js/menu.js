@@ -2,12 +2,13 @@
 
     const MENU = [
         {main: true, label: 'Home', uri: '/'},
-        {main: true, label: 'My Application', uri: '/page/application/'},
-        {main: true, label: '🎸 Takes', uri: '/page/takes/'},
-        {main: true, label: 'Thanks', uri: '/page/thanx/'},
-        {main: true, label: 'Future', uri: '/page/future/'},
+        {main: true, label: 'My Application', uri: '/page/application/', i18: {de: 'Bewerbung'}},
+        {main: true, label: '🎸 Takes', uri: '/page/takes/', i18: {de: '🎸 Aufnahmen'}},
+        {main: true, label: 'Thanks', uri: '/page/thanx/', i18: {de: 'Danke'}},
+        {main: true, label: 'Future', uri: '/page/future/', i18: {de: 'Zukunft'}},
+        {main: true, label: '🇬🇧', uri: '/page/lang/', i18: {de: '🇩🇪'}},
         {main: false, label: 'Equipment', uri: '/page/application/equipment/'},
-        {main: false, label: 'Guitars', uri: '/page/application/equipment/guitars/'},
+        {main: false, label: 'Guitars', uri: '/page/application/equipment/guitars/', i18: {de: 'Gitarren'}},
         {main: false, label: 'Amps', uri: '/page/application/equipment/amps/'},
         {main: false, label: 'Pedals', uri: '/page/application/equipment/pedals/'},
         {main: false, label: 'Recording', uri: '/page/application/equipment/recording/'},
@@ -29,7 +30,7 @@
             } else {
                 el.setAttribute('onclick', `goto('${i.uri}')`);
             }
-            el.innerHTML = i.label;
+            el.innerHTML = findLabel(i);
             menuNode.appendChild(el);
         });
     })();
@@ -47,7 +48,7 @@
         }
         const matchingItems = findMatchingMenuItems().reverse();
         matchingItems.forEach(i => {
-            const el = createItem(i.label);
+            const el = createItem(findLabel(i));
             el.setAttribute('onclick', `goto('${i.uri}')`);
             breadcrumbsNode.appendChild(el);
         });
@@ -56,8 +57,37 @@
             breadcrumbsNode.appendChild(el);
             document.title = window.getLastBreadcrumbTitle();
         } else {
-            document.title = matchingItems.reverse()[0].label;
+            document.title = findLabel(matchingItems.reverse()[0]);
         }
     })(110, 30);
+
+    window.goto = href => !sessionStorage.getItem('lang') ? location.href = window.impHref(href) : checkI18Avail(href)
+        .then(i18 => location.href = window.impHref(i18))
+        .catch(_ => location.href = window.impHref(href));
+
+    function findLabel(item) {
+        const lang = sessionStorage.getItem('lang');
+        if(lang && item.i18 && item.i18[lang]) {
+            return item.i18[lang];
+        }
+        return item.label;
+    }
+
+    function checkI18Avail(href) {
+        return new Promise((resolve, reject) => {
+            const requestedLang = sessionStorage.getItem('lang');
+            const i18Uri = href + `index-${requestedLang}.html`;
+            const xhr = new XMLHttpRequest();
+            xhr.onload = _ => {
+                if(xhr.status % 200 < 2) {
+                    resolve(i18Uri);
+                } else {
+                    reject();
+                }
+            }
+            xhr.open('HEAD', i18Uri);
+            xhr.send(null);
+        })
+    }
 
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));
