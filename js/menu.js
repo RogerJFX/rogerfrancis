@@ -61,7 +61,7 @@
         }
     })(110, 30);
 
-    window.goto = href => checkI18Avail(href)
+    window.goto = href => !sessionStorage.getItem('lang') ? location.href = window.impHref(href) : checkI18Avail(href)
         .then(i18 => location.href = window.impHref(i18))
         .catch(_ => location.href = window.impHref(href));
 
@@ -76,9 +76,6 @@
     function checkI18Avail(href) {
         return new Promise((resolve, reject) => {
             const requestedLang = sessionStorage.getItem('lang');
-            if(!requestedLang) {
-                reject();
-            }
             const i18Uri = href + `index-${requestedLang}.html`;
             const xhr = new XMLHttpRequest();
             xhr.onload = _ => {
