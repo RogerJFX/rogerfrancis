@@ -61,7 +61,9 @@
         }
     })(110, 30);
 
-    window.goto = href => checkI18AvailAndDoGoto(href);
+    window.goto = href => checkI18Avail(href)
+        .then(i18 => location.href = window.impHref(i18))
+        .catch(_ => location.href = window.impHref(href));
 
     function findLabel(item) {
         const lang = sessionStorage.getItem('lang');
@@ -71,21 +73,24 @@
         return item.label;
     }
 
-    function checkI18AvailAndDoGoto(href, fn) {
-        const requestedLang = sessionStorage.getItem('lang');
-        if(!requestedLang) {
-            location.href = window.impHref(href);
-        }
-        const xhr = new XMLHttpRequest();
-        xhr.onload = _ => {
-            if(xhr.status === 200) {
-                location.href = window.impHref(href + `index-${requestedLang}.html`);
-            } else {
-                location.href = window.impHref(href);
+    function checkI18Avail(href) {
+        return new Promise((resolve, reject) => {
+            const requestedLang = sessionStorage.getItem('lang');
+            if(!requestedLang) {
+                reject();
             }
-        }
-        xhr.open('HEAD', href + `index-${requestedLang}.html`);
-        xhr.send(null);
+            const i18Uri = href + `index-${requestedLang}.html`;
+            const xhr = new XMLHttpRequest();
+            xhr.onload = _ => {
+                if(xhr.status % 200 < 2) {
+                    resolve(i18Uri);
+                } else {
+                    reject();
+                }
+            }
+            xhr.open('HEAD', i18Uri);
+            xhr.send(null);
+        })
     }
 
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));
