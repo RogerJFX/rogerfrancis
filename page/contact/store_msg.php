@@ -8,7 +8,8 @@ $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $captcha_success = json_decode($verify);
 
 if ($captcha_success->success) {
-    $fp = fopen('data/msg_' . time() . '.txt', 'w');
+    $fp = fopen('data/msg_' . $data->mail . '_' . time() . '.txt', 'w');
+    fwrite($fp, date('d.m.Y H:i:s') . "\n");
     fwrite($fp, $data->name . "\n");
     fwrite($fp, $data->mail . "\n");
     fwrite($fp, $data->msg . "\n");

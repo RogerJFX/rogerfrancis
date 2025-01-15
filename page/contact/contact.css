@@ -4,7 +4,7 @@
 }
 
 #inputContainer > div {
-    margin: 8px;
+    margin: 12px;
 }
 
 #inputContainer > div.right-aligned {
@@ -13,12 +13,36 @@
 
 #inputContainer > div > input, textarea {
     width: 100%;
+    max-width: 100%;
+    border: 0;
+    border-right: 1px solid rgba(152, 118, 170, 0.45);
+    border-bottom: 1px solid rgba(152, 118, 170, 0.45);
+    border-radius: 8px;
 }
 
+#inputContainer > div > textarea {
+    height: 140px;
+}
+
+#inputContainer > div > input[type=submit] {
+    text-align: right;
+    color: #A4C261;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.serverResponse {
+    display: none;
+}
+
+/* Recaptcha stuff */
 .g-recaptcha {
     overflow:hidden;
     width:298px;
     height:74px;
+    opacity: 0.6;
+    border-radius: 8px;
 }
 iframe {
     margin:-1px 0 0 -2px;
