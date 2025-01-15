@@ -12,6 +12,7 @@ if ($captcha_success->success) {
     fwrite($fp, date('d.m.Y H:i:s') . "\n");
     fwrite($fp, $data->name . "\n");
     fwrite($fp, $data->mail . "\n");
+    fwrite($fp, "---\n");
     fwrite($fp, $data->msg . "\n");
     fclose($fp);
     echo ('success');

@@ -29,6 +29,6 @@ function sendMsgData(greResponse) {
         msg: document.getElementById('yMsg').value,
     }
     xhr.open('POST', 'store_msg.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send(`data=${JSON.stringify(data)}`);
 }
