@@ -6,6 +6,7 @@
         {main: true, label: '🎸 Takes', uri: '/page/takes/', i18: {de: '🎸 Aufnahmen'}},
         {main: true, label: 'Thanks', uri: '/page/thanx/', i18: {de: 'Danke'}},
         {main: true, label: 'Future', uri: '/page/future/', i18: {de: 'Zukunft'}},
+        {main: true, label: 'Contact', uri: '/page/contact/', i18: {de: 'Kontakt'}},
         {main: true, label: '🇬🇧', uri: '/page/lang/', i18: {de: '🇩🇪'}},
         {main: false, label: 'Equipment', uri: '/page/application/equipment/'},
         {main: false, label: 'Guitars', uri: '/page/application/equipment/guitars/', i18: {de: 'Gitarren'}},

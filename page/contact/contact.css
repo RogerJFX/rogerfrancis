@@ -1,0 +1,25 @@
+#inputContainer {
+    position: relative;
+    width: 500px;
+}
+
+#inputContainer > div {
+    margin: 8px;
+}
+
+#inputContainer > div.right-aligned {
+    float: right;
+}
+
+#inputContainer > div > input, textarea {
+    width: 100%;
+}
+
+.g-recaptcha {
+    overflow:hidden;
+    width:298px;
+    height:74px;
+}
+iframe {
+    margin:-1px 0 0 -2px;
+}
