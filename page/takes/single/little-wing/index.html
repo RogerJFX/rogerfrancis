@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>-</title>
+    <link rel="stylesheet" href="/css/prior.css">
+    <script src="/js/scriptAppender.js?v=1"></script>
+    <script>
+        appendScript('/js/version.js');
+        window.getLastBreadcrumbTitle = _ => 'Little Wing';
+        // $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playThisCrap('/assets/mp3/bubble_rough-01.mp3'));
+        $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playFirst());
+        window.onload = _ => {
+            appendCSS('/css/common.css');
+            appendCSS('../../takes.css');
+            appendScript('/js/menu.js');
+            appendScript('../../takes.js');
+        }
+    </script>
+</head>
+<body>
+    <div id="head" class="head"></div>
+    <div id="breadcrumbs" class="breadcrumbs"></div>
+    <div id="manualPlay" class="manualPlay"></div>
+    <h3>Little Wing</h3>
+    <div class="take-container">
+        <div class="take">
+            <div class="info">
+                <div class="title">Main version</div>
+                <div class="date">Date: Year 2000</div>
+                <div class="description">
+                    Using a basic Fender Champ with setup described below.
+                </div>
+            </div>
+            <div class="audio">
+                <audio controls loop>
+                    <source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
+                    No audio support? Use another browser then.
+                </audio>
+            </div>
+        </div>
+        <div class="take">
+            <div class="info">
+                <div class="title">Other version</div>
+                <div class="date">Date: Year 2000</div>
+                <div class="description">
+                    Same guitar, Synergy preamp with Teed module, stereo chorus and things.
+                    Pretty much sound shaping.
+                </div>
+            </div>
+            <div class="audio">
+                <audio controls loop>
+                    <source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
+                    No audio support? Use another browser then.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <p style="clear: both;">
+        People say, nobody could really play this one like the great master. Agreed. This one isn't that easy, since it
+        is not only technically a bit harder to play. But who says, it must sound like Jimi's version on the other hand?
+        I like it like so. That's why I play it this way. If you don't like it, I'm absolutely ok with it.
+    </p>
+    <p>
+        Mind the simple setup on first version. It wasn't meant to become a song here. This indeed would have been impossible. So this take
+        should remain a sample, just as a snapshot of someone's space of time in life. The other version's setup isn't described here.
+    </p>
+    <h4>Instruments</h4>
+    <ul>
+        <li><strong>Guitar:</strong> PRS McCarty (Thomastic Infeld 11-52 strings).</li>
+        <li><strong>Amp:</strong> Fender Champ from 1978 with TAD tubes.</li>
+        <li><strong>First microphone:</strong> Sennheiser E-906.</li>
+        <li><strong>Second microphone:</strong> Shure SM 57.</li>
+        <li><strong>Recording device:</strong> Tascam DR-40.</li>
+        <li><strong>DAW:</strong> Harrison Mixbus 10 Pro.</li>
+    </ul>
+    <h4>Guitar signal chain</h4>
+    <ul>
+        <li>Guitar</li>
+        <li>Wren&Cuff Gold Comp</li>
+        <li>Okko V.I.B.</li>
+        <li>MXR Carbon Copy Deluxe</li>
+        <li>Fender Champ from 1978</li>
+    </ul>
+</body>
+</html>

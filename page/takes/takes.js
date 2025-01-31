@@ -10,6 +10,13 @@ $rfcom = window.$rfcom || {};
                 removeManPlayNode();
             }));
     }
+    function playFirst() {
+        const audios = document.getElementsByTagName('audio');
+        document.addEventListener('play', e => {
+            [...audios].filter(a => a !== e.target).forEach(a => a.pause());
+        }, true);
+        [...audios][0].play();
+    }
     function appendManPlayNode(fn) {
         const link = document.createElement('A');
         link.classList.add('promoted');
@@ -27,6 +34,7 @@ $rfcom = window.$rfcom || {};
         a.addEventListener('transitionend', () => b.remove());
     }
     self.playThisCrap = playThisCrap;
+    self.playFirst = playFirst;
     $rfcom.appender.fireEvent('autoPlayerLoaded');
 
 })($rfcom.player = $rfcom.player || {});

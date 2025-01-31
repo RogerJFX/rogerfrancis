@@ -13,6 +13,8 @@
         {main: false, label: 'Amps', uri: '/page/application/equipment/amps/'},
         {main: false, label: 'Pedals', uri: '/page/application/equipment/pedals/'},
         {main: false, label: 'Recording', uri: '/page/application/equipment/recording/'},
+        {main: false, label: 'Archive', uri: '/page/archive/'},
+        {main: false, label: 'Before release', uri: '/page/archive/r0/'},
     ];
 
     function findMatchingMenuItems(onlyMain) {

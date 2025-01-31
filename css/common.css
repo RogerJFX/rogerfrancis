@@ -52,6 +52,24 @@ strong {
 	color: #6897BB;
 }
 
+h3 {
+	color: #E8BF6A;
+	font-weight: bold;
+	font-size: 16px;
+}
+h3::before {
+	content: '\000BB';
+	padding-right: 4px;
+	font-weight: bold;
+	font-size: 16px;
+}
+h3::after {
+	content: '\000AB';
+	padding-left: 4px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
 h4 {
 	color: #E8BF6A;
 	font-weight: bold;
