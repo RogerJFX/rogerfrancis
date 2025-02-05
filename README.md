@@ -7,6 +7,6 @@ See https://rogerfrancis.com
 Goal is a most minimal implementation. So no backend so far, only simple HTML and 
 some JavaScript. 
 
-Once, communication is needed, I will know, how to do it, dudes.
+Update: Roger wrote some PHP for the contact page. Well, well... - at least it works.
 
 No, and no Angular or WordPress. :P
