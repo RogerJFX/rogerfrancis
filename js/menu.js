@@ -93,4 +93,15 @@
         })
     }
 
+    (function log() {
+        const xhr = new XMLHttpRequest();
+        const data = {
+            path: location.href,
+            ua: navigator.userAgent
+        }
+        xhr.open('POST', '/log/logger.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(`data=${JSON.stringify(data)}`);
+    })();
+
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));

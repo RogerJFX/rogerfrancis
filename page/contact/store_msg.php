@@ -1,4 +1,4 @@
-<?
+<?php
 include 'secret.php';
 
 $dataString = $_POST['data'];

@@ -1,3 +1,5 @@
 /assets/mp3
 /.idea
 /page/contact/secret.php
+/log/logs/*
+/phpinfo.php
