@@ -4,7 +4,7 @@ $rfcom = window.$rfcom || {};
         const audio = new Audio(url);
         audio.loop = true;
         audio.play()
-            .then(_ => _)
+            .then(_ => logAction(audio.currentSrc, 'song'))
             .catch(_ => appendManPlayNode(_ => {
                 playThisCrap(url);
                 removeManPlayNode();

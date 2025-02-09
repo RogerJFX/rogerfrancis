@@ -14,6 +14,7 @@
 			appendScript('/js/menu.js');
 		}
 		document.addEventListener('play', e => {
+			logAction(e.target.currentSrc, 'play');
 			const audios = document.getElementsByTagName('audio');
 			[...audios].filter(a => a !== e.target).forEach(a => a.pause());
 		}, true);

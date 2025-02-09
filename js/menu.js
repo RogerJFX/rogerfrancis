@@ -107,15 +107,22 @@
         });
     })();
 
-    (function log() {
+    function log(href, action) {
         const xhr = new XMLHttpRequest();
         const data = {
-            path: location.href,
+            action: action ?? 'view',
+            path: href ?? location.href,
             ua: navigator.userAgent
         }
         xhr.open('POST', '/log/logger.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(`data=${JSON.stringify(data)}`);
+    }
+
+    (function xLog() {
+        log();
     })();
+
+    window.logAction = log;
 
 })(document.getElementById('head'), document.getElementById('breadcrumbs'));
