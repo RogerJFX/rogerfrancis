@@ -44,19 +44,15 @@ div.take-container div.take div.info div.title {
     color: #CC7832;
 }
 
-div.take-container div.take div.info div.title.linked {
-    cursor: pointer;
-}
-
-div.take-container div.take div.info div.title.linked::before {
-    content: '\000BB';
-    padding-right: 6px;
-}
-
-div.take-container div.take div.info div.title.linked::after {
+div.take-container div.take div.info div.title > a::after {
     content: '🎶';
     color: transparent;
-    text-shadow: 0 0 0 #CC7832;
+    text-shadow: 0 0 0 #A4C261;
+    text-align: right;
+    float:right;
+}
+
+div.take-container div.take div.info div.title > a {
     text-align: right;
     float:right;
 }
@@ -79,6 +75,7 @@ div.manualPlay {
 div.manualPlay.activated {
     height: 18px;
 }
+
 div.manualPlay.deleteMe {
     height: 0;
 }

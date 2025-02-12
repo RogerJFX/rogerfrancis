@@ -105,3 +105,10 @@ ul > li::marker {
 	color: #6A8759;
 	font-size: 18px;
 }
+
+a.imprint {
+	color: grey;
+	position: fixed;
+	bottom: 12px;
+	right: 12px;
+}

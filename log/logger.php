@@ -18,4 +18,5 @@ $fp = fopen($fileName, 'a');
 fwrite($fp, $line . "\n");
 fclose($fp);
 
+echo "PATH" . $data->path;
 ?>

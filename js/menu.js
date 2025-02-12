@@ -15,6 +15,7 @@
         {main: false, label: 'Recording', uri: '/page/application/equipment/recording/'},
         {main: false, label: 'Archive', uri: '/page/archive/'},
         {main: false, label: 'Before release', uri: '/page/archive/r0/'},
+        {main: false, label: 'Imprint', uri: '/page/imprint/', i18: {de: 'Impressum'}},
     ];
 
     function findMatchingMenuItems(onlyMain) {
@@ -68,6 +69,15 @@
         .then(i18 => location.href = window.impHref(i18))
         .catch(_ => location.href = window.impHref(href));
 
+    (function imprint() {
+        const node = document.createElement("A");
+        node.classList.add('imprint');
+        node.innerHTML = findLabel(MENU.find(i => i.label === 'Imprint'));
+        node.setAttribute('href', '#');
+        node.onclick = _ => goto('/page/imprint/');
+        document.body.appendChild(node);
+    })();
+
     function findLabel(item) {
         const lang = sessionStorage.getItem('lang');
         if(lang && item.i18 && item.i18[lang]) {
@@ -111,7 +121,7 @@
         const xhr = new XMLHttpRequest();
         const data = {
             action: action ?? 'view',
-            path: href ?? location.href,
+            path: (href ?? location.href).replaceAll('&', '%26'),
             ua: navigator.userAgent
         }
         xhr.open('POST', '/log/logger.php');
