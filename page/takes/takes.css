@@ -24,7 +24,7 @@ div.take-container {
 
 div.take-container div.take {
     width: 320px;
-    height: 200px;
+    height: 222px;
     border-left: 1px dotted rgba(152, 118, 170, 0.75);
     border-bottom: 1px dotted rgba(152, 118, 170, 0.95);
     border-radius: 8px;
@@ -59,6 +59,29 @@ div.take-container div.take div.info div.title > a {
 
 div.take-container div.take div.info div.date {
     color: #6A8759;
+}
+
+div.take-container div.take div.single-link {
+    position: relative;
+    bottom: 12px;
+    right: 8px;
+    color: #6A8759;
+    font-weight: bold;
+    text-align: right;
+    float:right;
+}
+
+div.take-container div.take div.single-link > a {
+    /*position: relative;*/
+
+}
+
+div.take-container div.take div.single-link > a::after {
+    content: '🎶';
+    color: transparent;
+    text-shadow: 0 0 0 #A4C261;
+    text-align: right;
+    float:right;
 }
 
 div.take-container div.take div.audio {
