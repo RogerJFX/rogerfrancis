@@ -7,7 +7,8 @@ function writeHTMLFile {
   local doc lastMod path num
   num=${1:-1}
   path=$2
-  # shellcheck disable=SC2010
+  # shellcheck disable=SC2010 # ls is sufficient for a tool
+  # shellcheck disable=SC2086 # path may be empty
   doc="$(ls -1 $path | grep '.html' | awk "NR==$num { print; }")"
   if [ "$doc" != "" ]; then
     echo '  <url>' >> $file
@@ -27,7 +28,7 @@ function writeHTMLFile {
 function checkHtmlExist() {
   local path found
   path=$1
-  # shellcheck disable=SC2010
+  # shellcheck disable=SC2010 # ls is sufficient for a tool
   found="$(ls -1 "$path" | grep '.html')"
   if [ "$found" != "" ]; then
     echo "$path/$found"
@@ -45,7 +46,7 @@ function crawl {
           writeHTMLFile 1 "$path"
       fi
   fi
-  # shellcheck disable=SC2012
+  # shellcheck disable=SC2012 # ls is sufficient for a tool
   dir="$(ls -1 "$path" | awk "NR==$num { print; }")"
   if [ -d "$path/$dir" ] && [ "$dir" != "" ]; then
     crawl 1 "$path/$dir"
