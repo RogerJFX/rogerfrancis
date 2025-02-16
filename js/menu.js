@@ -103,20 +103,6 @@
         })
     }
 
-    // TODO: this is not meant for serious, is it? Take the needed effort to make it clean.
-    // Otherwise, having something like a preprocessor isn't a bad idea. Just think, dude.
-    (function improveAnchors() {
-        const regex = /goto\('(.*)'\)/;
-        const anchors = document.querySelectorAll('a[onclick]');
-        Array.from(anchors).forEach(anchor => {
-            const goto = anchor.getAttribute('onclick');
-            if(goto && regex.test(goto)) {
-                anchor.setAttribute('href', impHref(regex.exec(goto)[1]));
-                anchor.onclick = _ => _;
-            }
-        });
-    })();
-
     function log(href, action) {
         const xhr = new XMLHttpRequest();
         const data = {
