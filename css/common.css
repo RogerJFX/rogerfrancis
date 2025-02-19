@@ -33,7 +33,7 @@ div.head > span.pwd {
 }
 
 div.breadcrumbs > span.item {
-	margin-right: 12px;
+	margin-right: 2px;
 	padding: 1px;
 	font-size: 16px;
 	cursor: pointer;
@@ -107,8 +107,9 @@ ul > li::marker {
 }
 
 a.imprint {
-	color: grey;
 	position: fixed;
-	bottom: 12px;
-	right: 12px;
+	bottom: 2px;
+	right: 8px;
+	color: grey;
+	opacity: 0.5;
 }

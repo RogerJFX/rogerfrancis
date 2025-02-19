@@ -55,6 +55,10 @@
             const el = createItem(findLabel(i));
             el.setAttribute('onclick', `goto('${i.uri}')`);
             breadcrumbsNode.appendChild(el);
+            // mobile first. Should break.
+            const space = document.createElement('SPAN');
+            space.innerHTML = ' ';
+            breadcrumbsNode.appendChild(space);
         });
         if(window.getLastBreadcrumbTitle) {
             const el = createItem(window.getLastBreadcrumbTitle());
