@@ -9,8 +9,7 @@
     <script>
         appendScript('/js/version.js');
         window.getLastBreadcrumbTitle = _ => 'Little Wing';
-        // $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playThisCrap('/assets/mp3/bubble_rough-01.mp3'));
-        $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playFirst());
+        $rfcom.appender.addEventListener('autoPlayerLoaded', () => $rfcom.player.playThisCrap('/assets/mp3/little-wing_dead-ears.mp3'));
         window.onload = _ => {
             appendCSS('/css/common.css');
             appendCSS('../../takes.css');
@@ -23,65 +22,44 @@
     <div id="head" class="head"></div>
     <div id="breadcrumbs" class="breadcrumbs"></div>
     <div id="manualPlay" class="manualPlay"></div>
-    <h3>Little Wing</h3>
-    <div class="take-container">
-        <div class="take">
-            <div class="info">
-                <div class="title">Main version</div>
-                <div class="date">Date: Year 2000</div>
-                <div class="description">
-                    Using a basic Fender Champ with setup described below.
-                </div>
-            </div>
-            <div class="audio">
-                <audio controls loop>
-                    <source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
-                    No audio support? Use another browser then.
-                </audio>
-            </div>
-        </div>
-        <div class="take">
-            <div class="info">
-                <div class="title">Other version</div>
-                <div class="date">Date: Year 2000</div>
-                <div class="description">
-                    Same guitar, Synergy preamp with Tweed module, stereo chorus and things.
-                    Pretty much sound shaping.
-                </div>
-            </div>
-            <div class="audio">
-                <audio controls loop>
-                    <source src="/assets/mp3/tidy_rough-01.mp3" type="audio/mpeg">
-                    No audio support? Use another browser then.
-                </audio>
-            </div>
-        </div>
-    </div>
-    <p style="clear: both;">
-        People say, nobody could really play this one like the great master. Agreed. This one isn't that easy, since it
-        is not only technically a bit harder to play. But who says, it must sound like Jimi's version on the other hand?
-        I like it like so. That's why I play it this way. If you don't like it, I'm absolutely ok with it.
+    <h3>Little Wing (Lullaby)</h3>
+    <p>
+        People, just have a guess on how long ears can become. Mine currently long to my holy butt. <strong>This is a provisional version!</strong>
     </p>
     <p>
-        Mind the simple setup on first version. It wasn't meant to become a song here. This indeed would have been impossible. So this take
-        should remain a sample, just as a snapshot of someone's space of time in life. The other version's setup isn't described here.
+        Anyway, it is just a sample. I plan to sing again. And then this lullaby might go to spotify.
     </p>
     <h4>Instruments</h4>
     <ul>
-        <li><strong>Guitar:</strong> PRS McCarty (Thomastic Infeld 11-52 strings).</li>
-        <li><strong>Amp:</strong> Fender Champ from 1978 with TAD tubes.</li>
-        <li><strong>First microphone:</strong> Sennheiser E-906.</li>
-        <li><strong>Second microphone:</strong> Shure SM 57.</li>
-        <li><strong>Recording device:</strong> Tascam DR-40.</li>
+        <li><strong>Theme guitar:</strong> PRS Custom 24 Piezo.</li>
+        <li><strong>Solo guitar:</strong> PRS McCarty (Thomastic Infeld 11-52 strings).</li>
+        <li><strong>Bass guitar:</strong> Ibanez fretless 5 string with an additional piezo pickup (Thomastic flatwound strings) over an En-Voice Mindprint.</li>
+        <li><strong>Backing vocal's mic: </strong> Sennheiser MD 431 II</li>
+        <li><strong>High bells: </strong>MIDI with Proteus 2000 expander.</li>
+        <li><strong>Drums: </strong>MIDI. Black Pearl Drumset sounds provided by the DAW.</li>
         <li><strong>DAW:</strong> Harrison Mixbus 10 Pro.</li>
     </ul>
     <h4>Guitar signal chain</h4>
     <ul>
         <li>Guitar</li>
-        <li>Wren&Cuff Gold Comp</li>
+        <li>Matallin GE-LPB 1</li>
         <li>Okko V.I.B.</li>
-        <li>MXR Carbon Copy Deluxe</li>
-        <li>Fender Champ from 1978</li>
+        <li>Lehle Parallel with:
+            <ul>
+                <li>Analogman Mini BiComp</li>
+                <li>Analogman Beano Boost, only Theme guitar</li>
+            </ul>
+        </li>
+        <li>Paul C. Audio Tim V3 (right guitar)</li>
+        <li>Empress ParaEQ Deluxe (left guitar)</li>
+        <li>Tubesteader Lightkeeper</li>
+        <li>Dickman Engineering Spacebar</li>
+        <li>Synergy SYN-2, Tweed module. Effect loop:
+            <ul>
+                <li>TC Electronic SCF</li>
+                <li>Source Audio Collider</li>
+            </ul>
+        </li>
     </ul>
 </body>
 </html>

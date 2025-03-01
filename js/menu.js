@@ -69,7 +69,7 @@
         }
     })(110, 30);
 
-    window.goto = href => !sessionStorage.getItem('lang') ? location.href = window.impHref(href) : checkI18Avail(href)
+    window.goto = href => !sessionStorage.getItem('lang') ? location.href = window.impHref(href) : checkI18Avail(href, sessionStorage.getItem('lang'))
         .then(i18 => location.href = window.impHref(i18))
         .catch(_ => location.href = window.impHref(href));
 
@@ -90,15 +90,35 @@
         return item.label;
     }
 
-    function checkI18Avail(href) {
+    function checkI18Avail(href, lang) {
+        const i18Uri = href + `index-${lang}.html`;
+        function pushDoc(avail) {
+            const strDocs = sessionStorage.getItem('docs');
+            const docs = strDocs ? JSON.parse(strDocs) : [];
+            docs.push({uri: i18Uri, ver: window.rfAppVersion, avail: avail});
+            sessionStorage.setItem('docs', JSON.stringify(docs));
+        }
+        function findDoc() {
+            const strDocs = sessionStorage.getItem('docs');
+            if(strDocs) {
+                const docs = JSON.parse(strDocs);
+                return docs.find(d => d.uri === i18Uri && d.ver === window.rfAppVersion);
+            }
+            return undefined;
+        }
         return new Promise((resolve, reject) => {
-            const requestedLang = sessionStorage.getItem('lang');
-            const i18Uri = href + `index-${requestedLang}.html`;
+            const doc = findDoc();
+            if(doc) {
+                doc.avail ? resolve(i18Uri) : reject();
+                return;
+            }
             const xhr = new XMLHttpRequest();
             xhr.onload = _ => {
                 if(xhr.status % 200 < 2) {
+                    pushDoc(true);
                     resolve(i18Uri);
                 } else {
+                    pushDoc(false);
                     reject();
                 }
             }
